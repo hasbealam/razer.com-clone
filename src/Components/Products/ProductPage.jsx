@@ -1,5 +1,5 @@
 import { Box,Center,Text,VStack,Grid,Image,GridItem,Link,Flex} from "@chakra-ui/react"
-// import { Link } from "react-router-dom";
+
 
 function ProductPage() {
    
