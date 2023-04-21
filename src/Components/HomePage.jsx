@@ -1,6 +1,7 @@
 import { Grid } from "@chakra-ui/react";
 import { HomePageBanner } from "./HomePageBanner";
 import { HomePageCard } from "./HomePageCard";
+import { Footer } from "./FooterComponents/Footer";
 import image1 from "../Images/1.jpg";
 import image2 from "../Images/2.jpg";
 import image3 from "../Images/3.jpg";
@@ -80,17 +81,27 @@ export function HomePage() {
     },
   ];
   return (
-    <Grid bg="#222" gap={3}>
-      <Grid gap={3}>
-        {homePageBannersData.map((info, index) => {
-          return <HomePageBanner info={info} key={index} p="10px" />;
-        })}
+    <>
+      <Grid bg="#222" gap={3} color="white">
+        <Grid gap={3}>
+          {homePageBannersData.map((info, index) => {
+            return <HomePageBanner info={info} key={index} p="10px" />;
+          })}
+        </Grid>
+        <Grid
+          templateColumns={[
+            "repeat(1, 1fr)",
+            "repeat(1, 1fr)",
+            "repeat(2, 1fr)",
+          ]}
+          gap={3}
+        >
+          {homePageCardData.map((info, index) => {
+            return <HomePageCard info={info} key={index} />;
+          })}
+        </Grid>
+        <Footer />
       </Grid>
-      <Grid templateColumns="repeat(2, 1fr)" gap={3}>
-        {homePageCardData.map((info, index) => {
-          return <HomePageCard info={info} key={index} />;
-        })}
-      </Grid>
-    </Grid>
+    </>
   );
 }

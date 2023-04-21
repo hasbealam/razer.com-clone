@@ -7,10 +7,11 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 
 export function HomePageBanner({ info }) {
   return (
-    <GridItem height="90vh" width="100%">
+    <GridItem height={{ base: "70vh", md: "70vh", lg: "100vh" }} width="100%">
       <Box zIndex={1} position="relative">
         <Image
           src={info.image}
@@ -18,20 +19,25 @@ export function HomePageBanner({ info }) {
           width="100%"
           objectFit="cover"
           objectPosition="center top"
-          height="90vh"
+          height={{ base: "70vh", md: "70vh", lg: "100vh" }}
         />
         <Box zIndex={2} position="relative" color="white" pt="50px">
           <Box width="100%">
-            <Center>
-              <Heading as="h2" size="2xl" pb="5px" noOfLines={2}>
-                {info.heading1}
-              </Heading>
-            </Center>
-            <Center>
-              <Text fontSize="3xl" pb="5px">
-                {info.heading2}
-              </Text>
-            </Center>
+            <Heading
+              as="h2"
+              size={{ base: "xl", md: "2xl", lg: "3xl" }}
+              pb="6px"
+              align="center"
+            >
+              {info.heading1}
+            </Heading>
+            <Text
+              fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
+              pb="3px"
+              align="center"
+            >
+              {info.heading2}
+            </Text>
             <Center>
               <Button
                 colorScheme="white"
@@ -41,6 +47,7 @@ export function HomePageBanner({ info }) {
                 pr="20px"
               >
                 {info.button1}
+                <ChevronRightIcon color="green" pt="4px" boxSize={7} />
               </Button>
               {info.button2 ? (
                 <Button
@@ -50,6 +57,7 @@ export function HomePageBanner({ info }) {
                   fontSize="xl"
                 >
                   {info.button2}
+                  <ChevronRightIcon color="green" pt="4px" boxSize={7} />
                 </Button>
               ) : null}
             </Center>
