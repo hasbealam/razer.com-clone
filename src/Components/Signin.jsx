@@ -12,11 +12,12 @@ import {
   InputGroup,
   InputRightElement,
   Icon,
+  HStack,
+  Divider
 } from "@chakra-ui/react";
 import { BsFacebook, BsTwitch } from "react-icons/bs";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { MdLogin } from "react-icons/md";
 import { SiAccenture } from "react-icons/si";
 import { toast } from "react-toastify";
 import { useNavigate, Link } from "react-router-dom";
@@ -86,7 +87,7 @@ function Signin(props) {
       }}
     >
       <Center>
-        <Box mt="20px" w="412px" h="560px" bg="#000000">
+        <Box border={"2px"} borderColor={"green"} mt="20px" w="412px" h="560px" bg="#000000">
           <Heading
             ml="20px"
             my="30px"
@@ -177,16 +178,11 @@ function Signin(props) {
                 <Link to={"/signup"}>Create Razer ID</Link>
               </Button>
             </Center>
-            <Center>
-              <Stack w="375px" my={4} direction="row" spacing={2}>
-                {/* <Divider size={"20px"}  orientation="horizontal" /> */}
-
-                <hr width="110px" />
-                <Text color={"#73767B"}>or continue with</Text>
-                <hr width="110px" />
-                {/* <Divider orientation="horizontal" size="10px" /> */}
-              </Stack>
-            </Center>
+            <HStack m="auto" w="380px" my={4} >
+          <Divider orientation='horizontal' />
+            <Text color={"#73767B"}>or</Text>
+            <Divider orientation='horizontal' />
+          </HStack>
             <Stack ml="20px" mt="10px" mb="50px" direction="row" spacing={4}>
               <Button
                 px="45px"

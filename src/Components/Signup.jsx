@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Navbar } from "./Navbar";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
 import {
@@ -17,6 +16,7 @@ import {
   InputRightElement,
   Checkbox,
   Icon,
+  HStack,
 } from "@chakra-ui/react";
 import { BsFacebook, BsTwitch } from "react-icons/bs";
 import { AiFillGoogleCircle } from "react-icons/ai";
@@ -114,7 +114,8 @@ function Signup(props) {
       }}
     >
       <Center>
-        <Box mt="20px" w="412px" h="1390px" bg="#000000">
+        
+        <Box border={"2px"} borderColor={"green"} mt="20px" w="412px" h="1390px" bg="#000000">
           <Heading
             ml="20px"
             my="30px"
@@ -128,7 +129,7 @@ function Signup(props) {
           <Text ml="20px" mb="40px" color={"white"}>
             Razer ID is a unified account for all Razer services.
           </Text>
-          <Stack ml="20px" mt="10px" mb="50px" direction="row" spacing={4}>
+          <Stack ml="20px" mt="10px" mb="20px" direction="row" spacing={4}>
             <Button
               px="45px"
               leftIcon={<BsFacebook boxSize="30" />}
@@ -151,22 +152,17 @@ function Signup(props) {
               title="Twitch"
             ></Button>
           </Stack>
-
-          <Stack direction={"column"}>
-            <Center>
-              <Divider mt={"20px"} orientation="horizontal" />
-            </Center>
-          </Stack>
-          <Center>
+          <HStack m="auto" w="370px" my={8} >
+          <Divider orientation='horizontal' />
             <Text color={"#73767B"}>or</Text>
-          </Center>
+            <Divider orientation='horizontal' />
+          </HStack>
           <form>
             <Input
               value={id}
               onChange={(e) => setId(e.target.value)}
               width="375px"
               ml={"20px"}
-              mt={8}
               mb="20px"
               focusBorderColor="rgb(69,214,43)"
               color={"white"}

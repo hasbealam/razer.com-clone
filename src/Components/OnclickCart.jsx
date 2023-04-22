@@ -22,8 +22,12 @@ import { FiShoppingCart } from "react-icons/fi";
 import { SlDiamond } from "react-icons/sl";
 import { BsBox, BsBoxArrowRight } from "react-icons/bs";
 import { BsFillCartPlusFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function OnclickCart() {
+  const navigate = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
@@ -129,7 +133,7 @@ export function OnclickCart() {
               leftIcon={<BsBoxArrowRight boxSize={6} />}
               variant="liqued"
             >
-              Log in
+              <Link to={"/signin"} >Log in</Link>
             </Button>
           </DrawerBody>
 
