@@ -1,16 +1,16 @@
 import { Grid } from "@chakra-ui/react";
 import { HomePageBanner } from "./HomePageBanner";
 import { HomePageCard } from "./HomePageCard";
-import { Footer } from "./FooterComponents/Footer";
-import image1 from "../Images/1.jpg";
-import image2 from "../Images/2.jpg";
-import image3 from "../Images/3.jpg";
-import image4 from "../Images/4.jpg";
-import image5 from "../Images/5.jpg";
-import image6 from "../Images/6.jpg";
-import image7 from "../Images/7.jpg";
-import image8 from "../Images/8.jpg";
-import image9 from "../Images/9.jpg";
+import { Footer } from "../Footer/Footer";
+import image1 from "..//..//Images/HomePageImages/1.jpg";
+import image2 from "..//..//Images/HomePageImages/2.jpg";
+import image3 from "..//..//Images/HomePageImages/3.jpg";
+import image4 from "..//..//Images/HomePageImages/4.jpg";
+import image5 from "..//..//Images/HomePageImages/5.jpg";
+import image6 from "..//..//Images/HomePageImages/6.jpg";
+import image7 from "..//..//Images/HomePageImages/7.jpg";
+import image8 from "..//..//Images/HomePageImages/8.jpg";
+import image9 from "..//..//Images/HomePageImages/9.jpg";
 
 export function HomePage() {
   const homePageBannersData = [

@@ -73,18 +73,17 @@ import {
   Text,
   textDecoration,
   HStack,
-  Flex
+  Flex,
 } from "@chakra-ui/react";
-import { color } from "framer-motion";
 import {
   FooterWhiteHeading,
   FooterLinkText,
   FooterGreenText,
 } from "./FooterTextsDecorations";
 import { SocialMediaButtons } from "./SocialMediaButtons";
-import twitterIcon from "../../Images/Social_Media_Icons/twitter.svg";
-import instagramIcon from "../../Images/Social_Media_Icons/instagram.svg";
-import facebookIcon from "../../Images/Social_Media_Icons/facebook.svg";
+import twitterIcon from "../../Images/SocialMediaImages/twitter.svg";
+import instagramIcon from "../../Images/SocialMediaImages/instagram.svg";
+import facebookIcon from "../../Images/SocialMediaImages/facebook.svg";
 
 export function Footer() {
   const footerLinks = {
