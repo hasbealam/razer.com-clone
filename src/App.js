@@ -1,10 +1,8 @@
 import "./App.css";
-import { HomePage } from "./Components/HomePage";
+import {HomePage} from "../src/Components/Homepage/HomePage" 
 import {Navbar} from "./Components/Navbar";
 import { Signup } from "./Components/Signup";
 import { Signin } from "./Components/Signin";
-
-
 
 function App() {
   return (

@@ -6,13 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
-
+import Theme from "./Components/Theme";
+import "@fontsource/titillium-web/400.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <ChakraProvider>
-        <App />
+    <ChakraProvider theme={Theme}>
+      <App />
     </ChakraProvider>
   </Provider>
 );
