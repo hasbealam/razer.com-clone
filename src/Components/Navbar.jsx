@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { SearchModal } from "./SearchModal";
 import {OnclickCart} from "./OnclickCart"
+import { Header } from "./Header";
 
 function Navbar(props) {
   return (
@@ -26,7 +27,7 @@ function Navbar(props) {
         borderBottomColor="rgb(69,214,43)"
         borderBottomWidth="1px"
       >
-        <Flex gap={20} justifyContent={"center"} alignItems={"center"}>
+        <Flex justifyContent={"center"} alignItems={"center"}>
           <Wrap pt={"17px"}>
             <WrapItem pr="60px">
               <Box w="40px">
@@ -111,28 +112,7 @@ function Navbar(props) {
           </Wrap>
         </Flex>
       </Box>
-
-      <Box
-        bg="#555555"
-        h={{
-          sm: "100px",
-          md: "70px",
-          lg: "65px",
-          xl: "55px",
-          "2xl": "44px",
-        }}
-        display={["block", "block", "block", "flex"]}
-        alignItems={"center"}
-        justifyContent={"center"}
-      >
-        <Text color={"white"}>
-          Unleash a new age of technology with an arsenal of cutting-edge
-          innovations that will keep you ahead of the game.
-        </Text>
-        <Button _hover={{color:"rgb(69,214,43)"}} colorScheme="black" size="sm">
-          Shop Now
-        </Button>
-      </Box>
+      <Header />
     </div>
   );
 }
