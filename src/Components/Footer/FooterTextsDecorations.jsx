@@ -32,7 +32,7 @@ export function FooterLinkText({ text }) {
 
 export function FooterGreenText({ text }) {
   return (
-    <Text fontSize="s" color="#44d62c" pb="2px">
+    <Text fontSize={{base: "xs", md:"s", lg:"lg"}} color="#44d62c" pb="2px">
       {text}
     </Text>
   );
