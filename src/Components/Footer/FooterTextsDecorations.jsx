@@ -37,3 +37,11 @@ export function FooterGreenText({ text }) {
     </Text>
   );
 }
+
+export function FooterGrayText({ text }) {
+  return (
+    <Text fontSize="xs" color="#999" pb="10px">
+      {text}
+    </Text>
+  );
+}
