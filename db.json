@@ -630,20 +630,5 @@
     }
   ],
   "cart": [],
-  "users": [
-    {
-      "id": "sumit",
-      "country": "bahrain",
-      "date": "2001-01-02",
-      "email": "sumit@123gmai.com",
-      "password": "sumit@123"
-    },
-    {
-      "id": "123",
-      "country": "bahamas",
-      "date": "4567-03-12",
-      "email": "123@",
-      "password": "123@"
-    }
-  ]
+  "users": []
 }

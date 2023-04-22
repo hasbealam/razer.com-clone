@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { HomePage } from "./Components/HomePage";
-import { Navbar } from "./Components/Navbar";
+import {HomePage} from "../src/Components/Homepage/HomePage" 
+import {Navbar} from "./Components/Navbar";
 import { Signup } from "./Components/Signup";
 import { Signin } from "./Components/Signin";
 import { Routes, Route } from "react-router-dom";
@@ -31,6 +31,8 @@ function App() {
       </Routes>
     </div>
   );
+  return <div className="App">
+  </div>;
 }
 
 export default App;
