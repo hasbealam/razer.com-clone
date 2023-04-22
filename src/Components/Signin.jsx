@@ -32,11 +32,11 @@ function Signin(props) {
   const proceedLogin = (e) => {
     e.preventDefault();
     if (validation()) {
-      fetch("https://localhost:3000/user/" + email).then((res) => {
+      fetch("http://localhost:3000/users/").then((res) => {
         return res.json()
       }).then((response) => {
-        console.log(response);
-        if(Object.keys(response).length===0){
+        console.log(response.country);
+        if(Object.keys(response.response).length===0){
           toast.error("Please enter valid email & password");
         } else{
           if(response.password === password){

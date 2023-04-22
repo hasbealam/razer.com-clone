@@ -90,7 +90,7 @@ function Signup(props) {
     let userDataObj = { id, country, date, email, password };
     // console.log(userDataObj)
     if (isValidated()) {
-      fetch("http//localhost:3000/user", {
+      fetch("http://localhost:3000/users", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(userDataObj),
