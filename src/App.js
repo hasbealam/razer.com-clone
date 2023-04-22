@@ -3,20 +3,20 @@ import { HomePage } from "./Components/HomePage";
 import {Navbar} from "./Components/Navbar";
 import { Signup } from "./Components/Signup";
 import { Signin } from "./Components/Signin";
+import Pc from "./Components/Products/Pc";
 
 
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <HomePage /> */}
       {/* <Signup /> */}
-      <Signin /> 
+      {/* <Signin />  */}
+      <Pc/>
     </div>
   );
-  return <div className="App">
-  </div>;
 }
 
 export default App;
