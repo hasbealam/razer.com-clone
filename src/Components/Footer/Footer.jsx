@@ -118,31 +118,31 @@ import instagramIcon from "../../Images/SocialMediaImages/instagram.svg";
 import facebookIcon from "../../Images/SocialMediaImages/facebook.svg";
 
 export function Footer() {
-const footerLinks = {
-  Shop: [
-    "RazerStores",
-    "RazerCafe",
-    "Store Locator",
-    "Purchase Programs",
-    "Education",
-    "Exclusives",
-    "RazerStore Rewards",
-    "Newsletter",
-  ],
+  const footerLinks = {
+    Shop: [
+      "RazerStores",
+      "RazerCafe",
+      "Store Locator",
+      "Purchase Programs",
+      "Education",
+      "Exclusives",
+      "RazerStore Rewards",
+      "Newsletter",
+    ],
 
-  Explore: ["Technology", "Chroma RGB", "Concepts", "Esports", "Collabs"],
-  Support: [
-    "Get Help",
-    "Registration & Warranty",
-    "RazerStore Support",
-    "RazerCare",
-    "Manage Razer ID",
-    "Support Videos",
-    "Accessibility Statement",
-  ],
+    Explore: ["Technology", "Chroma RGB", "Concepts", "Esports", "Collabs"],
+    Support: [
+      "Get Help",
+      "Registration & Warranty",
+      "RazerStore Support",
+      "RazerCare",
+      "Manage Razer ID",
+      "Support Videos",
+      "Accessibility Statement",
+    ],
 
-  Company: ["About Us", "Careers", "Press Room", "zVentures", "Contact Us"],
-};
+    Company: ["About Us", "Careers", "Press Room", "zVentures", "Contact Us"],
+  };
   return (
     <Box bg="black">
       <Box w="80%" margin="auto">
