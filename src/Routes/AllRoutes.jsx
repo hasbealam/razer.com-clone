@@ -6,7 +6,10 @@ export function AllRoutes() {
     return (
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/" element={<Pc />} /> */}
+        <Route path="/productpage" element={<ProductPage />} />
+        <Route path="/pc" element={<Pc />} />
+        
+
       </Routes>
     );
 }
