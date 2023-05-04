@@ -629,6 +629,7 @@
       "color": "Black Murcury"
     }
   ],
+<<<<<<< HEAD
   "cart": [
     {
       "id": 1,
@@ -654,3 +655,8 @@
   ],
   "users": []
 }
+=======
+  "cart": [],
+  "users": []
+}
+>>>>>>> a68493c3dcb687553e5209dce589dda6fb804c61
