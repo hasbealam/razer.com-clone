@@ -11,7 +11,6 @@ function ProductsDetails() {
   
   const dispatch=useDispatch();
       useEffect(()=>{
-        // const res1= fetch("http://localhost:3000/data")
         dispatch(handlegetData())
       },[])
     return (
