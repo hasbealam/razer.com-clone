@@ -629,6 +629,34 @@
       "color": "Black Murcury"
     }
   ],
+<<<<<<< HEAD
+  "cart": [
+    {
+      "id": 1,
+      "img": {
+        "img1": "https://assets3.razerzone.com/uVlIiPdbHQF-baAX2aghIVukYVA=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh00%2Fh3f%2F9481464348702%2F230222-blade15-ch9-1500x1000-1.jpg",
+        "img2": "https://assets3.razerzone.com/ay1dL2V-aCXmjk2p9nArviCUMKw=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh6a%2Fh3f%2F9481464381470%2F230222-blade15-ch9-1500x1000-2.jpg",
+        "img3": "https://assets3.razerzone.com/A1v1qrutzap6dYba9B0BCoeagEE=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fha8%2Fh3e%2F9481464315934%2F230222-blade15-ch9-1500x1000-3.jpg",
+        "img4": "https://assets3.razerzone.com/S8pG_WTNYcKMTj5UDaWvy-TCIWk=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh11%2Fh42%2F9481464414238%2F230222-blade15-ch9-1500x1000-4.jpg",
+        "img5": "https://assets3.razerzone.com/_KY2w8pfZYKbx3I3zNzYFVUuR_Y=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh02%2Fh3c%2F9481464283166%2F230222-blade15-ch9-1500x1000-6.jpg"
+      },
+      "title": "Razer Blade 14 - Full HD 144Hz - GeForce RTX 3060 - Mercury",
+      "specifications": {
+        "processor": "AMD Ryzen™ 9 6900HX",
+        "windows": "Windows 11 Home",
+        "screen": 14,
+        "force": "GeForce RTX 3060",
+        "storage": "16GB 4800MHz RAM, 1TB SSD"
+      },
+      "price": 54999,
+      "cprice": 59999,
+      "color": "Green"
+    }
+  ],
+  "users": []
+}
+=======
   "cart": [],
   "users": []
 }
+>>>>>>> a68493c3dcb687553e5209dce589dda6fb804c61
