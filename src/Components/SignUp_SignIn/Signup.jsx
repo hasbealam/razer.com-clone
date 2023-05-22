@@ -25,7 +25,6 @@ import { MdLogin } from "react-icons/md";
 import { useNavigate, Link } from "react-router-dom";
 
 function Signup(props) {
-
   //input
   const [id, setId] = useState("");
   const [country, setCountry] = useState("");
@@ -69,12 +68,11 @@ function Signup(props) {
       isproceed = false;
       errormessage += " Email";
     }
-    
 
     if (!isproceed) {
       toast.warning(errormessage);
     } else {
-      if (email.includes('@')) {
+      if (email.includes("@")) {
       } else {
         isproceed = false;
         toast.warning("Please enter the valid email");
@@ -84,13 +82,13 @@ function Signup(props) {
   };
 
   /// handlesubmit
+  const SERVER_URL = process.env.REACT_APP_URL;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let userDataObj = { id, country, date, email, password };
-    // console.log(userDataObj)
     if (isValidated()) {
-      fetch("http://localhost:3000/users", {
+      fetch(`${SERVER_URL}users`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(userDataObj),
@@ -114,8 +112,14 @@ function Signup(props) {
       }}
     >
       <Center>
-        
-        <Box border={"2px"} borderColor={"green"} mt="20px" w="412px" h="1390px" bg="#000000">
+        <Box
+          border={"2px"}
+          borderColor={"green"}
+          mt="20px"
+          w="412px"
+          h="1390px"
+          bg="#000000"
+        >
           <Heading
             ml="20px"
             my="30px"
@@ -152,10 +156,10 @@ function Signup(props) {
               title="Twitch"
             ></Button>
           </Stack>
-          <HStack m="auto" w="370px" my={8} >
-          <Divider orientation='horizontal' />
+          <HStack m="auto" w="370px" my={8}>
+            <Divider orientation="horizontal" />
             <Text color={"#73767B"}>or</Text>
-            <Divider orientation='horizontal' />
+            <Divider orientation="horizontal" />
           </HStack>
           <form>
             <Input

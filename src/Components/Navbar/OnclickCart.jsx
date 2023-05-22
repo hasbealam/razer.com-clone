@@ -1,4 +1,3 @@
-
 import React from "react";
 import { css } from "@emotion/react";
 
@@ -25,38 +24,29 @@ import { BsFillCartPlusFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { logoutSucess } from "../../Redux/ProductData/productAction";
 export function OnclickCart() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
   const [borderColor, setBorderColor] = React.useState("#888");
   const [animationInterval, setAnimationInterval] = React.useState(null);
+  const dispatch = useDispatch();
+  const isAuth = useSelector((state) => {
+    return state.productReducer.isAuth;
+  });
 
-  // Start the border color animation on drawer open
-  React.useEffect(() => {
-    if (isOpen) {
-      const interval = setInterval(() => {
-        setBorderColor((prevColor) => {
-          const colors = ["#30fc03", "#0bfc03", "#0dd638", "#063811"];
-          const currentIndex = colors.indexOf(prevColor);
-          const nextIndex = (currentIndex + 1) % colors.length;
-          return colors[nextIndex];
-        });
-      }, 1000);
-      setAnimationInterval(interval);
-    }
-  }, [isOpen]);
-
-  // Stop the border color animation on drawer close
   React.useEffect(() => {
     if (!isOpen && animationInterval) {
       clearInterval(animationInterval);
       setAnimationInterval(null);
     }
   }, [isOpen]);
-
+  const handleLogout = () => {
+    dispatch(logoutSucess());
+  };
   return (
     <>
       <Icon
@@ -85,26 +75,30 @@ export function OnclickCart() {
           <DrawerHeader>
             <Center>
               <Text color="#888" mt="20px">
-                Your Cart is empty.
+                Dashboard
               </Text>
             </Center>
           </DrawerHeader>
 
           <DrawerBody>
-            <Button
-              _hover={{ color: "rgb(69,214,43)" }}
-              color="white"
-              leftIcon={<FiShoppingCart boxSize={6} />}
-              variant="liqued"
-            >
-              Cart
-            </Button>
+            <Link to="/cart">
+              <Button
+                _hover={{ color: "rgb(69,214,43)" }}
+                color="white"
+                leftIcon={<FiShoppingCart boxSize={6} />}
+                variant="liqued"
+                onClick={onClose}
+              >
+                Cart
+              </Button>
+            </Link>
             <Divider color="#888" orientation="horizontal" />
             <Button
               _hover={{ color: "rgb(69,214,43)" }}
               color="white"
               leftIcon={<BsBox boxSize={6} />}
               variant="liqued"
+              onClick={onClose}
             >
               Orders
             </Button>
@@ -114,6 +108,7 @@ export function OnclickCart() {
               color="white"
               leftIcon={<VscAccount boxSize={6} />}
               variant="liqued"
+              onClick={onClose}
             >
               Account
             </Button>
@@ -123,18 +118,32 @@ export function OnclickCart() {
               color="white"
               leftIcon={<SlDiamond boxSize={6} />}
               variant="liqued"
+              onClick={onClose}
             >
               RazerStore Rewars
             </Button>
             <Divider orientation="horizontal" />
-            <Button
-              _hover={{ color: "rgb(69,214,43)" }}
-              color="white"
-              leftIcon={<BsBoxArrowRight boxSize={6} />}
-              variant="liqued"
-            >
-              <Link to={"/signin"} >Log in</Link>
-            </Button>
+            {isAuth ? (
+              <Button
+                _hover={{ color: "rgb(69,214,43)" }}
+                color="white"
+                leftIcon={<BsBoxArrowRight boxSize={6} />}
+                variant="liqued"
+                onClick={handleLogout}
+              >
+                Log out
+              </Button>
+            ) : (
+              <Button
+                _hover={{ color: "rgb(69,214,43)" }}
+                color="white"
+                leftIcon={<BsBoxArrowRight boxSize={6} />}
+                variant="liqued"
+                onClick={onClose}
+              >
+                <Link to={"/signin"}>Log in</Link>
+              </Button>
+            )}
           </DrawerBody>
 
           <DrawerFooter>

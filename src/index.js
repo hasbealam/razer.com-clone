@@ -9,6 +9,7 @@ import { store } from "./Redux/store";
 import "@fontsource/titillium-web/400.css";
 import Theme from "./Components/Theme/Theme";
 import { Provider } from "react-redux";
+import "react-toastify/dist/ReactToastify.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

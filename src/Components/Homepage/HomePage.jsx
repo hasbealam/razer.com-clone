@@ -100,7 +100,6 @@ export function HomePage() {
             return <HomePageCard info={info} key={index} />;
           })}
         </Grid>
-        <Footer />
       </Grid>
     </>
   );

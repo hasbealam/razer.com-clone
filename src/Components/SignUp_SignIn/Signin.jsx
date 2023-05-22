@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "./Navbar";
+import { Navbar } from "../Navbar/Navbar";
 import { useState } from "react";
 import {
   Box,
@@ -13,7 +13,7 @@ import {
   InputRightElement,
   Icon,
   HStack,
-  Divider
+  Divider,
 } from "@chakra-ui/react";
 import { BsFacebook, BsTwitch } from "react-icons/bs";
 import { AiFillGoogleCircle } from "react-icons/ai";
@@ -21,37 +21,51 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { SiAccenture } from "react-icons/si";
 import { toast } from "react-toastify";
 import { useNavigate, Link } from "react-router-dom";
-
+import { loginSucess } from "../../Redux/ProductData/productAction";
+import { useDispatch, useSelector } from "react-redux";
 function Signin(props) {
   //eye button
   const [show, setShow] = React.useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const isAuth = useSelector((state) => {
+    return state.productReducer.isAuth;
+  });
+  if (isAuth) {
+    toast.success("Login Sucessful");
+    navigate("/");
+  }
+  const SERVER_URL = process.env.REACT_APP_URL;
 
   const proceedLogin = (e) => {
     e.preventDefault();
     if (validation()) {
-      fetch("http://localhost:3000/users/").then((res) => {
-        return res.json()
-      }).then((response) => {
-        console.log(response.country);
-        if(Object.keys(response.response).length===0){
-          toast.error("Please enter valid email & password");
-        } else{
-          if(response.password === password){
-            toast.success("Login Sucessful")
-             navigate("/")
-          }else{
-            toast.error("Please enter valid Credentials");
-          }
-        }
-      }).catch((err)=> {
-        toast.error("Login failed due to :"+err.message);
-      })
+      fetch(`${SERVER_URL}users/`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((response) => {
+          response.map((ele, i) => {
+            if (ele.email === email && ele.password === password) {
+              // toast.success("Login Sucessful");
+              // navigate("/")
+              // setLogin(true);
+            } else {
+              toast.warning("Enter correct Credentials");
+            }
+          });
+        })
+        .catch((err) => {
+          toast.error("Login failed due to :" + err.message);
+        });
     }
+
+    dispatch(loginSucess(email, password));
   };
-//validation
+
+  //validation
   const validation = () => {
     let result = true;
     let errormessage = "Please enter your ";
@@ -87,7 +101,14 @@ function Signin(props) {
       }}
     >
       <Center>
-        <Box border={"2px"} borderColor={"green"} mt="20px" w="412px" h="560px" bg="#000000">
+        <Box
+          border={"2px"}
+          borderColor={"green"}
+          mt="20px"
+          w="412px"
+          h="560px"
+          bg="#000000"
+        >
           <Heading
             ml="20px"
             my="30px"
@@ -109,7 +130,7 @@ function Signin(props) {
               focusBorderColor="rgb(69,214,43)"
               color={"white"}
               type="email"
-              placeholder="EMAIL ADRESS"
+              placeholder="EMAIL ADDRESS"
             ></Input>
             <InputGroup size="md">
               <Input
@@ -178,11 +199,11 @@ function Signin(props) {
                 <Link to={"/signup"}>Create Razer ID</Link>
               </Button>
             </Center>
-            <HStack m="auto" w="380px" my={4} >
-          <Divider orientation='horizontal' />
-            <Text color={"#73767B"}>or</Text>
-            <Divider orientation='horizontal' />
-          </HStack>
+            <HStack m="auto" w="380px" my={4}>
+              <Divider orientation="horizontal" />
+              <Text color={"#73767B"}>or</Text>
+              <Divider orientation="horizontal" />
+            </HStack>
             <Stack ml="20px" mt="10px" mb="50px" direction="row" spacing={4}>
               <Button
                 px="45px"
