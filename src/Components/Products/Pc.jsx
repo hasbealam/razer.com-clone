@@ -87,9 +87,9 @@ function Pc() {
           <Filter setSort={setSort} setFilter={setFilter} />
         </Box>
         <Grid w="70%" gridTemplateColumns="repeat(3,1fr)" gap="20px" ml="5%">
-          {data.map((e) => {
+          {data.map((e, index) => {
             return (
-              <GridItem alignItems="center" bg="#252525" color="white">
+              <GridItem key={index} alignItems="center" bg="#252525" color="white">
                 <Image src={e.img.img1} w="100%" m="auto"></Image>
                 <Box bg="black" p={5} textAlign="left">
                   <Text ml="-5px" fontSize={25}>
@@ -104,7 +104,7 @@ function Pc() {
                     <ListItem>{e.specifications.windows}</ListItem>
                     <ListItem>{e.specifications.force}</ListItem>
                   </UnorderedList>
-                 
+
                   <Link to={`/productDetails/${e.id}`}>View Details</Link>
                   <br></br>
                   <Text>US$&nbsp;{e.price} </Text>
