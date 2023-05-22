@@ -7,7 +7,6 @@ import { css } from '@emotion/react';
 
 export function SearchModal() {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    console.log(isOpen, onClose, "search wala")
     const initialRef = React.useRef(null);
     const finalRef = React.useRef(null);
 

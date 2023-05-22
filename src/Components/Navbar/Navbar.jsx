@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import {
   Box,
   Text,
@@ -11,40 +12,46 @@ import {
 } from "@chakra-ui/react";
 import { SearchModal } from "./SearchModal";
 import {OnclickCart} from "./OnclickCart"
+import { Header } from "./Header";
 
 function Navbar(props) {
   return (
     <div>
       <Box
         h={{
-            sm: "120px",
-            md: "100px",
-            lg: "90px",
-            xl: "3.75rem",
+          sm: "120px",
+          md: "100px",
+          lg: "90px",
+          xl: "3.75rem",
         }}
         bg={"black"}
         borderBottomColor="rgb(69,214,43)"
         borderBottomWidth="1px"
       >
-        <Flex gap={20} justifyContent={"center"} alignItems={"center"}>
+        <Flex justifyContent={"center"} alignItems={"center"}>
           <Wrap pt={"17px"}>
             <WrapItem pr="60px">
-              <Box w="40px">
-                <Image mt={-1}
-                  w="100%"
-                  src="https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Razer_snake_logo.svg/1200px-Razer_snake_logo.svg.png"
-                  alt="razer.com"
-                  _hover={{ cursor: "pointer" }}
-                />
-              </Box>
+              <Link to="./">
+                <Box w="40px">
+                  <Image
+                    mt={-1}
+                    w="100%"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Razer_snake_logo.svg/1200px-Razer_snake_logo.svg.png"
+                    alt="razer.com"
+                    _hover={{ cursor: "pointer" }}
+                  />
+                </Box>
+              </Link>
             </WrapItem>
             <WrapItem pr="60px">
-              <Text
-                _hover={{ color: "white", cursor: "pointer" }}
-                color="#888888"
-              >
-                Store
-              </Text>
+              <Link to="./store">
+                <Text
+                  _hover={{ color: "white", cursor: "pointer" }}
+                  color="#888888"
+                >
+                  Store
+                </Text>
+              </Link>
             </WrapItem>
             <WrapItem pr="60px">
               <Text
@@ -103,7 +110,7 @@ function Navbar(props) {
               </Text>
             </WrapItem>
             <WrapItem pr="60px">
-            <SearchModal />
+              <SearchModal />
             </WrapItem>
             <WrapItem pr="60px">
               <OnclickCart />
@@ -111,28 +118,7 @@ function Navbar(props) {
           </Wrap>
         </Flex>
       </Box>
-
-      <Box
-        bg="#555555"
-        h={{
-          sm: "100px",
-          md: "70px",
-          lg: "65px",
-          xl: "55px",
-          "2xl": "44px",
-        }}
-        display={["block", "block", "block", "flex"]}
-        alignItems={"center"}
-        justifyContent={"center"}
-      >
-        <Text color={"white"}>
-          Unleash a new age of technology with an arsenal of cutting-edge
-          innovations that will keep you ahead of the game.
-        </Text>
-        <Button _hover={{color:"rgb(69,214,43)"}} colorScheme="black" size="sm">
-          Shop Now
-        </Button>
-      </Box>
+      <Header />
     </div>
   );
 }

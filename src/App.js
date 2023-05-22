@@ -1,22 +1,13 @@
-import "./App.css";
-import { HomePage } from "./Components/HomePage";
-import {Navbar} from "./Components/Navbar";
-import { Signup } from "./Components/Signup";
-import { Signin } from "./Components/Signin";
-
-
+import { AllRoutes } from "./Routes/AllRoutes";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      {/* <HomePage /> */}
-      {/* <Signup /> */}
-      <Signin /> 
+      <ToastContainer theme="colored"> </ToastContainer>
+      <AllRoutes />
     </div>
   );
-  return <div className="App">
-  </div>;
 }
 
 export default App;
