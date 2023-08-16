@@ -175,7 +175,7 @@ function Payments(props) {
                   <Td>US${total}</Td>
                 </Tr>
                 <Tr>
-                  <Td>Local Texes</Td>
+                  <Td>Local Taxes</Td>
                   <Td>To be calculated</Td>
                 </Tr>
                 <Tr>
