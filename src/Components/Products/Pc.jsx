@@ -87,8 +87,8 @@ function Pc() {
           <Filter setSort={setSort} setFilter={setFilter} />
         </Box>
         <Grid w="70%" gridTemplateColumns="repeat(3,1fr)" gap="20px" ml="5%">
-          {Array.isArray(data) && data.length > 0 &&
-            data.map((e, index) => {
+          {data?.length > 0 &&
+            data?.map((e, index) => {
               return (
                 <GridItem
                   key={index}
